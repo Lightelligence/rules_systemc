@@ -1,0 +1,10 @@
+build --copt=-march=native
+build --copt=-mno-avx512f
+build --copt=-O2
+build --copt=-Wno-sign-compare
+build --cxxopt=-std=c++17
+
+build --config=clang
+build:clang --action_env=CC=clang
+build:clang --action_env=CXX=clang++
+build:clang --linkopt=-fuse-ld=lld
